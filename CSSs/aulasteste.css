@@ -1,0 +1,144 @@
+
+.container { display: flex; min-height: 100vh; margin-left: 250px; }
+
+
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  background: #000;
+  border-right: 2px solid #8000ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 87px;
+  bottom: 0;
+  left: 0;
+}
+
+.accordion-btn {
+  background: none;
+  border: none;
+  color: #b65bff;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Michroma';
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-btn:hover { color: #d19bff; }
+
+
+.accordion-content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;                
+  transition: max-height 0.32s ease, padding 0.32s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;  
+}
+
+
+.accordion-link{
+  display: block;
+  padding: 8px 6px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.accordion-link:hover { 
+  background: #8000ff; 
+  transform: translateX(3px);;
+  cursor: pointer;
+}
+
+
+.footer {
+  color: #b65bff;
+  border-top: 1px solid #8000ff;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+
+@media (max-width: 600px) {
+  .sidebar { width: 180px; }
+  .content { margin-left: 180px; padding: 20px; }
+}
+
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #8000ff;
+  margin-top: 20px;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+.aula-bloco {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 70px;
+  align-items: flex-start;
+}
+
+.aula-video {
+  width: 850px;
+  border-radius: 10px;
+}
+
+.aula-info {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  color: white;
+}
+
+.aula-info h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #9408fc;
+}
+
+.aula-info ul {
+  padding-left: 18px;
+  margin-bottom: 20px;
+}
+
+.aula-info li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.aula-titulo {
+  margin-top: 50px;
+  color: white;
+}

@@ -1,0 +1,58 @@
+.page-inicial .p1 {
+  font-family: 'Michroma';
+  color: #9408fc;
+  text-align: center;
+  font-size: 30px;
+}
+
+.page-inicial .nuvem {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: radial-gradient(circle at 30% 30%, #9408fc, #b404cf);
+  border-radius: 50px;
+  padding: 15px 25px;
+  box-shadow: 0 0 25px rgba(137, 0, 128, 0.5);
+}
+
+.page-inicial .nuvem button {
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'Michroma';
+  cursor: pointer;
+}
+
+.page-inicial #linguagens {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 100px;
+  flex-wrap: wrap;
+}
+
+.page-inicial .card {
+  background: #f9fafb;
+  border: 5px solid #9408fc;
+  border-radius: 35px;
+  padding: 20px;
+  width: 280px;
+  height: 280px;
+  text-align: center;
+  font-family: 'Michroma';
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-inicial .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.page-inicial .card h3 {
+  color: #9408fc;
+}
+
+.page-inicial .pcard {
+  color: black;
+}
