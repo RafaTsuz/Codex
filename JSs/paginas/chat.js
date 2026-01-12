@@ -1,117 +1,67 @@
-const chats = {
-  python: [],
-  javascript: [],
-  htmlcss: []
-};
-
-let currentChat = "python";
-
-/* Quando o usuário clicar na sidebar */
-document.addEventListener("click", e => {
-  if (e.target.classList.contains("accordion-link") && e.target.dataset.chat) {
-    const chatName = e.target.dataset.chat;
-    openChat(chatName);
-  }
-});
-
-/* Abre o chat certo */
-export function openChat(chatName) {
-  currentChat = chatName;
-  document.getElementById("chat-title").textContent =
-    "Chat de " + formatChatName(chatName);
-
-  renderMessages();
-}
-
-/* Nome bonitinho */
-function formatChatName(name) {
-  if (name === "htmlcss") return "HTML + CSS";
-  return name.charAt(0).toUpperCase() + name.slice(1);
-}
-
-/* Renderiza as mensagens */
-function renderMessages() {
-  const box = document.getElementById("chat-messages");
-  if (!box) return;
-
-  box.innerHTML = "";
-
-  chats[currentChat].forEach(msg => {
-    const div = document.createElement("div");
-    div.classList.add("message");
-    if (msg.me) div.classList.add("me");
-    div.textContent = msg.text;
-    box.appendChild(div);
-  });
-
-  box.scrollTop = box.scrollHeight;
-}
-
-/* Enviar mensagem */
-
-
-function sendMessage() {
-  const input = document.getElementById("chat-input-field");
-  const text = input.value.trim();
-  if (!text) return;
-
-  chats[currentChat].push({ text, me: true });
-  input.value = "";
-
-  renderMessages();
-}
-
-export function iniciarChat() {
-  const btn = document.getElementById("chat-send-btn");
-  const input = document.getElementById("chat-input-field");
-
-  if (!btn || !input) return; // se não está na página de chat, sai
-
-  console.log("✔ Chat iniciado.");
-
-  btn.onclick = sendMessage;
-  input.onkeydown = (e) => {
-    if (e.key === "Enter") sendMessage();
-  };
-
-  renderMessages();
-}
-
+// 🔥 Firebase (CDN)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
-  db,
+  getFirestore,
   collection,
   addDoc,
+  onSnapshot,
   query,
   orderBy,
-  onSnapshot
-} from "./firebase.js";
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const mensagensRef = collection(db, "mensagens");
+// ⚙️ Config
+const firebaseConfig = {
+  apiKey: "AIzaSyAZYiHungOKy0fgTnLGgQYPfaZ3d6j5_uo",
+  authDomain: "codex-oficial-chat.firebaseapp.com",
+  projectId: "codex-oficial-chat",
+  storageBucket: "codex-oficial-chat.firebasestorage.app",
+  messagingSenderId: "98599997360",
+  appId: "1:98599997360:web:d9efddd87ea4c23b1a5075"
+};
 
-const q = query(mensagensRef, orderBy("data"));
+// 🚀 Init
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-onSnapshot(q, (snapshot) => {
-  const chat = document.querySelector("#chat");
-  chat.innerHTML = "";
+// 🎯 Função principal
+export function iniciarChat() {
+  const form = document.getElementById("chat-form");
+  const input = document.getElementById("chat-input-field");
+  const mensagens = document.getElementById("chat-mensagens");
 
-  snapshot.forEach((doc) => {
-    const msg = doc.data();
+  if (!form || !input || !mensagens) return;
 
-    const div = document.createElement("div");
-    div.className = "mensagem";
-    div.textContent = msg.texto;
+  // 👂 Escuta mensagens em tempo real
+  const q = query(
+    collection(db, "mensagens"),
+    orderBy("createdAt")
+  );
 
-    chat.appendChild(div);
+  onSnapshot(q, snapshot => {
+    mensagens.innerHTML = "";
+    snapshot.forEach(doc => {
+      const msg = doc.data();
+      const div = document.createElement("div");
+      div.className = "mensagem";
+      div.textContent = msg.texto;
+      mensagens.appendChild(div);
+    });
+
+    mensagens.scrollTop = mensagens.scrollHeight;
   });
 
-  chat.scrollTop = chat.scrollHeight;
-});
+  // ✉️ Enviar mensagem
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const texto = input.value.trim();
+    if (!texto) return;
 
-export async function enviarMensagem(texto) {
-  if (!texto.trim()) return;
+    await addDoc(collection(db, "mensagens"), {
+      texto,
+      createdAt: serverTimestamp()
+    });
 
-  await addDoc(mensagensRef, {
-    texto,
-    data: new Date()
+    input.value = "";
   });
 }
