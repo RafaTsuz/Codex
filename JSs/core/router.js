@@ -2,6 +2,7 @@ import { iniciarMatrix, iniciarFadeMatrix } from "../layout/matrix.js";
 import { iniciarAccordions } from "../layout/accordion.js";
 import { iniciarFAQ } from "../layout/faq.js";
 import { iniciarChat } from "../paginas/chat.js";
+import { trocarChat } from "../paginas/chat.js";
 import { initCarousel } from "../paginas/sobre.js";
 
 
@@ -40,7 +41,10 @@ function carregarPagina(nome) {
 
       setTimeout(() => {
         content.classList.add("loaded");
-        if (nome === "chatsteste") iniciarChat();
+        if (nome === "chatsteste") {
+          iniciarChat();
+          iniciarSidebarChats();
+        }
       }, 10);
     });
 }
@@ -80,3 +84,11 @@ window.irParaAula = secao => navegarPara("aulas", secao, 300);
 window.irParaSecao = (pagina, secao) => navegarPara(pagina, secao);
 
 export { atualizarPagina };
+
+function iniciarSidebarChats() {
+  document.querySelectorAll("[data-chat]").forEach(item => {
+    item.onclick = () => {
+      trocarChat(item.dataset.chat);
+    };
+  });
+}

@@ -17,9 +17,9 @@
       <div class="accordion">
         <button class="accordion-btn" aria-expanded="false">Chats <span class="tri">▼</span></button>
         <ul class="accordion-content">
-          <li class="accordion-link" data-chat="python" onclick="irParaSecao('chats','python')">Chat de Python</li>
-          <li class="accordion-link" data-chat="javascript" onclick="irParaSecao('chats','javascript')">Chat de JavaScript</li>
-          <li class="accordion-link" data-chat="htmlcss" onclick="irParaSecao('chats','htmlcss')">Chat de HTML + CSS</li>
+          <li class="accordion-link" data-chat="python" >Chat de Python</li>
+          <li class="accordion-link" data-chat="javascript" >Chat de JavaScript</li>
+          <li class="accordion-link" data-chat="htmlcss" >Chat de HTML + CSS</li>
         </ul>
       </div>
     </div>
@@ -39,20 +39,10 @@
 
     <div class="chat-messages" id="chat-mensagens"></div>
 
-      <div class="chat-input" id="chat-form">
+      <form class="chat-input" id="chat-form">
         <input type="text" id="chat-input-field" placeholder="Digite sua mensagem..." />
-        <button id="chat-send-btn">Enviar</button>
-      </div>
-
-      <script type="module">
-  import { enviarMensagem } from "./JS/chat.js";
-
-  document.getElementById("btnEnviar").onclick = () => {
-    const input = document.getElementById("inputMsg");
-    enviarMensagem(input.value);
-    input.value = "";
-  };
-</script>
+        <button type="submit" id="chat-send-btn">Enviar</button>
+      </form>
 
     </div>
     </main> 
