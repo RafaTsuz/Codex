@@ -76,3 +76,42 @@ export function iniciarChat() {
 
   renderMessages();
 }
+
+import {
+  db,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot
+} from "./firebase.js";
+
+const mensagensRef = collection(db, "mensagens");
+
+const q = query(mensagensRef, orderBy("data"));
+
+onSnapshot(q, (snapshot) => {
+  const chat = document.querySelector("#chat");
+  chat.innerHTML = "";
+
+  snapshot.forEach((doc) => {
+    const msg = doc.data();
+
+    const div = document.createElement("div");
+    div.className = "mensagem";
+    div.textContent = msg.texto;
+
+    chat.appendChild(div);
+  });
+
+  chat.scrollTop = chat.scrollHeight;
+});
+
+export async function enviarMensagem(texto) {
+  if (!texto.trim()) return;
+
+  await addDoc(mensagensRef, {
+    texto,
+    data: new Date()
+  });
+}

@@ -36,11 +36,21 @@
 
     <div class="chat-messages" id="chat-messages"></div>
 
-    <div class="chat-input">
-      <input type="text" id="chat-input-field" placeholder="Digite sua mensagem..." />
-      <button id="chat-send-btn">Enviar</button>
-    </div>
-
+      <div class="chat-input">
+        <input type="text" id="chat-input-field" placeholder="Digite sua mensagem..." />
+        <button id="chat-send-btn">Enviar</button>
       </div>
+
+      <script type="module">
+  import { enviarMensagem } from "./JS/chat.js";
+
+  document.getElementById("btnEnviar").onclick = () => {
+    const input = document.getElementById("inputMsg");
+    enviarMensagem(input.value);
+    input.value = "";
+  };
+</script>
+
+    </div>
     </main> 
   </div>
