@@ -98,18 +98,12 @@
 
 .message {
   animation: fadeInUp 0.5s ease;
-  background: white;
+  background: rgb(72, 72, 72);
   color: black;
   padding: 8px 14px;
   border-radius: 16px;
   max-width: 60%;
   width: fit-content;
-}
-
-.message.other {
-  background: #595959;
-  color: #000000;
-  margin-right: auto;
 }
 
 
