@@ -34,20 +34,20 @@ function carregarPagina(nome) {
   removerCSSDaPagina();
   carregarCSSDaPagina(nome);
 
-    return fetch(`${PASTA_PAGINAS}/${nome}.html`)
+  return fetch(`${PASTA_PAGINAS}/${nome}.html`)
     .then(r => r.text())
     .then(html => {
       content.innerHTML = html;
+      content.classList.add("loaded");
 
-      setTimeout(() => {
-        content.classList.add("loaded");
-        if (nome === "chatsteste") {
-          iniciarChat();
-          iniciarSidebarChats();
-        }
-      }, 10);
+      // init específico da página
+      if (nome === "chatsteste") {
+        iniciarChat();
+        iniciarSidebarChats();
+      }
     });
 }
+
 
 function atualizarPagina() {
   const hash = location.hash.slice(1) || "paginainicialteste";

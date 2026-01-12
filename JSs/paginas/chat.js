@@ -86,5 +86,3 @@ export function trocarChat(chat) {
   chatAtual = chat;
   iniciarChat();
 }
-
-
