@@ -27,6 +27,15 @@ if (!userId) {
   localStorage.setItem("codex_user_id", userId);
 }
 
+// 🧑 Username anônimo
+let username = localStorage.getItem("codex_username");
+
+if (!username) {
+  const random = Math.floor(10000 + Math.random() * 90000);
+  username = "User" + random;
+  localStorage.setItem("codex_username", username);
+}
+
 // 📌 Estado
 let chatAtual = "python";
 let unsubscribe = null;
@@ -56,10 +65,20 @@ export function iniciarChat() {
     mensagens.innerHTML = "";
     snapshot.forEach(doc => {
       const msg = doc.data();
+
       const div = document.createElement("div");
       div.classList.add("message");
+
       if (msg.userId === userId) div.classList.add("me");
-      div.textContent = msg.texto;
+
+      
+      const name = document.createElement("span");
+      name.classList.add("username");
+      name.textContent = msg.username || "User";
+      const text = document.createElement("span");
+      text.textContent = msg.texto;
+      div.appendChild(name);
+      div.appendChild(text);
       mensagens.appendChild(div);
     });
     mensagens.scrollTop = mensagens.scrollHeight;
@@ -74,6 +93,7 @@ export function iniciarChat() {
     await addDoc(collection(db, `chats/${chatAtual}/mensagens`), {
       texto,
       userId,
+      username,
       createdAt: serverTimestamp()
     });
 
