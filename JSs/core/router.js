@@ -92,3 +92,14 @@ function iniciarSidebarChats() {
     };
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("menu-btn");
+  const sidebar = document.querySelector(".sidebar");
+
+  if (!btn || !sidebar) return;
+
+  btn.onclick = () => {
+    sidebar.classList.toggle("open");
+  };
+});
