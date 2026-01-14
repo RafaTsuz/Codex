@@ -40,7 +40,9 @@ function carregarPagina(nome) {
       content.innerHTML = html;
       content.classList.add("loaded");
 
-      // init específico da página
+      iniciarMenuMobile()
+
+      
       if (nome === "chatsteste") {
         iniciarChat();
         iniciarSidebarChats();
@@ -93,7 +95,7 @@ function iniciarSidebarChats() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function iniciarMenuMobile() {
   const btn = document.getElementById("menu-btn");
   const sidebar = document.querySelector(".sidebar");
 
@@ -102,4 +104,4 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.onclick = () => {
     sidebar.classList.toggle("open");
   };
-});
+}

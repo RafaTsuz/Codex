@@ -5,6 +5,14 @@
   font-size: 30px;
 }
 
+.page-inicial #pcodex{
+            text-indent: 30px; 
+            line-height: 2; 
+            font-size: 25px; 
+            max-width: 1200px; 
+            margin: auto;
+          }
+
 .page-inicial .nuvem {
   position: fixed;
   bottom: 10px;
@@ -55,6 +63,10 @@
 
 .page-inicial .pcard {
   color: black;
+}
+
+.page-inicial .imgcard{
+  height: 40%;
 }
 
 .sobre-texto {
@@ -140,4 +152,19 @@
             #subtitle {
                 font-size: 1rem;
             }
+        }
+
+        @media (max-width: 768px) {
+          .page-inicial #pcodex{
+            text-indent: 30px;
+            line-height: 2; 
+            font-size: 12px; 
+            max-width: 1200px; 
+            margin: auto;
+            flex-direction: column;
+          }
+
+        .pagina-inicial .espaco100{
+          padding-top: 50px;
+        }
         }

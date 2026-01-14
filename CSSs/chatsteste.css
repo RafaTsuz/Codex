@@ -176,3 +176,55 @@
     transform: translateY(0);
   }
 }
+
+#menu-btn{
+  display: none;
+}
+
+@media (max-width: 768px) {
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tudo nunca passa da tela */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+  .sidebar { 
+    width: 180px; 
+    position: fixed;
+    top: calc(100%-87px);
+    left: -260px;
+    height: 100%;
+    z-index: 2000;
+    transition: left 0.3s ease;
+  }
+  .container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+   #conteudo{
+    margin-top: 20px;
+  }
+
+  .sidebar.open {
+    left: 0; /* aparece por cima */
+  }
+
+#menu-btn {
+    display: block;
+    position: fixed;
+    top: 85px;
+    left: 10px;
+    z-index: 3000;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 18px;
+  }
+
+}

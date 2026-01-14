@@ -1,12 +1,15 @@
 
-.container { display: flex; min-height: 100vh; margin-left: 250px; }
+.container { 
+  display: flex; 
+  min-height: 100vh; 
+  margin-left: 250px; }
 
 
 .sidebar {
   width: 220px;
   padding: 20px;
   background: #000;
-  border-right: 2px solid #8000ff;
+  border-right: 2px solid #9408fc;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,13 +74,6 @@
   font-size: 13px;
 }
 
-
-@media (max-width: 600px) {
-  .sidebar { width: 180px; }
-  .content { margin-left: 180px; padding: 20px; }
-}
-
-
 .video-container {
   position: relative;
   padding-bottom: 56.25%; 
@@ -141,4 +137,75 @@
 .aula-titulo {
   margin-top: 50px;
   color: white;
+}
+
+#menu-btn{
+  display: none;
+}
+
+/*Aplicação Mobile*/
+
+@media (max-width: 768px) {
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tudo nunca passa da tela */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+  .sidebar { 
+    width: 180px; 
+    position: fixed;
+    top: 80px;
+    left: -260px;
+    height: 100%;
+    z-index: 2000;
+    transition: left 0.3s ease;
+  }
+
+  .container {
+    margin-left: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+
+   #conteudo{
+    margin-top: 20px;
+  }
+
+  .sidebar.open {
+    left: 0; /* aparece por cima */
+  }
+
+#menu-btn {
+    display: block;
+    position: fixed;
+    top: 85px;
+    left: 10px;
+    z-index: 3000;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 18px;
+  }
+
+  .aula-bloco {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .aula-video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .aula-info {
+    width: 100%;
+  }
+
 }

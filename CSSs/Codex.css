@@ -16,6 +16,7 @@ html, body {
     overflow-x: hidden;
     background: #000;
     font-family: 'Michroma';
+    max-width: 100%;
 }
 
 
@@ -24,8 +25,12 @@ html, body {
   padding: 0px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
+  
+
 
 
 
@@ -92,6 +97,7 @@ p {
 /* =========================
    MOBILE (até 768px)
 ========================= */
+
 @media (max-width: 768px) {
 
   /* Remove espaço da sidebar */
@@ -99,56 +105,23 @@ p {
     margin-left: 0;
   }
 
-  /* Botão ☰ aparece */
-  #menu-btn {
-    display: block;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 200;
-    background: #9408fc;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 10px;
-    font-size: 18px;
+  .navbar {
+    padding: 0 10px;
   }
 
-  /* Sidebar vira menu */
-  .sidebar {
-    display: block;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 150;
+  .navbar ul {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
   }
 
-  .sidebar.open {
-    transform: translateX(0);
+  .navbar ul::-webkit-scrollbar {
+    display: none;
   }
 
-  /* Chat ocupa a tela inteira */
-  .chat-container {
-    height: 100vh;
+  #botao-nav {
+    display: none; /* depois vira botão na sidebar */
   }
-
-  /* Mensagens mais largas */
-  .message {
-    max-width: 80%;
-  }
-
-  /* Input confortável no celular */
-  .chat-input {
-    margin: 8px;
-  }
-
-  #chat-input-field {
-    font-size: 16px;
-  }
-}
-
-/* =========================
-   DESKTOP (esconde botão)
-========================= */
-#menu-btn {
-  display: none;
 }
