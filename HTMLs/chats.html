@@ -1,0 +1,49 @@
+ 
+  <div class="container">
+    <aside class="sidebar">
+    <div class="menu">
+    <button id="menu-btn">☰</button>
+      <!-- Acordeão 1 -->
+      <div class="accordion">
+        <button class="accordion-btn" aria-expanded="false">Classes <span class="tri">▼</span></button>
+        <ul class="accordion-content">
+          <li><a onclick="irParaSecao('aulas','AbaPython')" class="accordion-link">Python</a></li>
+          <li><a onclick="irParaSecao('aulas','AbaJava')" class="accordion-link">JavaScript</a></li>
+          <li><a onclick="irParaSecao('aulas','AbaHTMLCSS')" class="accordion-link">HTML + CSS</a></li>
+        </ul>
+      </div>
+
+      <!-- Acordeão 2 -->
+      <div class="accordion">
+        <button class="accordion-btn" aria-expanded="false">Chats <span class="tri">▼</span></button>
+        <ul class="accordion-content">
+          <li class="accordion-link" data-chat="python" >Chat de Python</li>
+          <li class="accordion-link" data-chat="javascript" >Chat de JavaScript</li>
+          <li class="accordion-link" data-chat="htmlcss" >Chat de HTML + CSS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">Codex © 2025</div>
+    </aside>
+
+
+    <main id="conteudo">
+      <div class="chat-container">
+
+    <div class="chat-header">
+      <h2 id="chat-title">Chat</h2>
+    </div>
+
+
+
+
+    <div class="chat-messages" id="chat-mensagens"></div>
+
+      <form class="chat-input" id="chat-form">
+        <input type="text" id="chat-input-field" placeholder="Digite sua mensagem..." />
+        <button type="submit" id="chat-send-btn">Enviar</button>
+      </form>
+
+    </div>
+    </main> 
+  </div>

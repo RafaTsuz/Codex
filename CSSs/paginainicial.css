@@ -1,0 +1,170 @@
+.page-inicial .p1 {
+  font-family: 'Michroma';
+  color: #9408fc;
+  text-align: center;
+  font-size: 30px;
+}
+
+.page-inicial #pcodex{
+            text-indent: 30px; 
+            line-height: 2; 
+            font-size: 25px; 
+            max-width: 1200px; 
+            margin: auto;
+          }
+
+.page-inicial .nuvem {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: radial-gradient(circle at 30% 30%, #9408fc, #b404cf);
+  border-radius: 50px;
+  padding: 15px 25px;
+  box-shadow: 0 0 25px rgba(137, 0, 128, 0.5);
+}
+
+.page-inicial .nuvem button {
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'Michroma';
+  cursor: pointer;
+}
+
+.page-inicial #linguagens {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 100px;
+  flex-wrap: wrap;
+}
+
+.page-inicial .card {
+  background: #f9fafb;
+  border: 5px solid #9408fc;
+  border-radius: 35px;
+  padding: 20px;
+  width: 280px;
+  height: 280px;
+  text-align: center;
+  font-family: 'Michroma';
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-inicial .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.page-inicial .card h3 {
+  color: #9408fc;
+}
+
+.page-inicial .pcard {
+  color: black;
+}
+
+.page-inicial .imgcard{
+  height: 40%;
+}
+
+.sobre-texto {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#matrix-container {
+  position: relative;
+  height: 100vh; 
+  overflow: hidden;
+  background: #000;
+}
+
+#matrix-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+
+
+#matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    color: #9408fc;
+    text-shadow: 0 0 20px #9408fc, 0 0 40px #9408fc;
+}
+
+#title {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        #subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.8;
+            letter-spacing: 1px;
+            margin-bottom: 8rem;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #9408fc, 0 0 20px #9408fc;
+            }
+            to {
+                text-shadow: 0 0 20px #9408fc, 0 0 30px #9408fc;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            #subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+          .page-inicial #pcodex{
+            text-indent: 30px;
+            line-height: 2; 
+            font-size: 12px; 
+            max-width: 1200px; 
+            margin: auto;
+            flex-direction: column;
+          }
+
+        .pagina-inicial .espaco100{
+          padding-top: 50px;
+        }
+        }

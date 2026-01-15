@@ -1,0 +1,231 @@
+<div class="container">
+  <aside class="sidebar">
+    <div class="menu">
+      <button id="menu-btn">☰</button>
+
+      <!-- Acordeão 1 -->
+      <div class="accordion">
+        <button class="accordion-btn" aria-expanded="false">Classes <span class="tri">▼</span></button>
+        <ul class="accordion-content">
+          <li><a onclick="irParaSecao('aulas','AbaPython')" class="accordion-link">Python</a></li>
+          <li><a onclick="irParaSecao('aulas','AbaJava')" class="accordion-link">JavaScript</a></li>
+          <li><a onclick="irParaSecao('aulas','AbaHTMLCSS')" class="accordion-link">HTML + CSS</a></li>
+        </ul>
+      </div>
+
+      <!-- Acordeão 2 -->
+      <div class="accordion">
+        <button class="accordion-btn" aria-expanded="false">Chats <span class="tri">▼</span></button>
+        <ul class="accordion-content">
+          <li class="accordion-link" data-chat="python" onclick="irParaSecao('chats','python')">Chat de Python</li>
+          <li class="accordion-link" data-chat="javascript" onclick="irParaSecao('chats','javascript')">Chat de JavaScript</li>
+          <li class="accordion-link" data-chat="htmlcss" onclick="irParaSecao('chats','htmlcss')">Chat de HTML + CSS</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer">Codex © 2025</div>
+  </aside>
+
+  <main id="conteudo">
+    <!---Aba Python-->
+    <h1 class="titulo" id="AbaPython"> Python</h1>
+    
+      <h2 class="aula-titulo">Aula introdutória</h2>
+        <div class="aula-bloco">
+          <video class="aula-video" controls>
+            <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+          </video>
+          <div class="aula-info">
+            <h3>Conteúdo</h3>
+            <ul>
+              <li>O que é Python</li>
+              <li>Onde usar Python</li>
+              <li>Instalação e primeiro código</li>
+            </ul>
+            <h3>📝 Exercícios</h3>
+            <ul>
+              <li>...</li>
+            </ul>
+          </div>
+        </div>
+
+      <h2 class="aula-titulo">Aula 2</h2>
+
+        <div class="aula-bloco">
+          <video class="aula-video" controls>
+            <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+          </video>
+          <div class="aula-info">
+            <h3>Conteúdo</h3>
+            <ul>
+              <li>Sintaxe Básica</li>
+              <li>Print e F-String</li>
+              <li>Variáveis</li>
+              <li>Input</li>
+              <li>Comentários</li>
+            </ul>
+            <h3>📝 Exercícios</h3>
+            <ul>
+              <li>Hello World</li>
+              <li>Perguntar nota da prova (decimal)</li>
+              <li>Perguntar nome e nota de 0-10 sobre Codex</li>
+            </ul>
+          </div>
+        </div>
+
+      <h2 class="aula-titulo">Aula 3</h2>
+
+        <div class="aula-bloco">
+          <video class="aula-video" controls>
+            <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+          </video>
+          <div class="aula-info">
+            <h3>Conteúdo</h3>
+            <ul>
+              <li>Matemática no Python</li>
+              <li>condições (if, elif, else)</li>
+            </ul>
+            <h3>📝 Exercícios</h3>
+            <ul>
+              <li>perguntar que pergunta a idade e responde se pode alistar ou não</li>
+              <li>Calculadora simples (adição e subtração)</li>
+              <li>Verificador de média escolar</li>
+            </ul>
+          </div>
+        </div>
+
+
+      <h2 class="aula-titulo">Aula 4</h2>
+
+        <div class="aula-bloco">
+          <video class="aula-video" controls>
+            <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+          </video>
+          <div class="aula-info">
+            <h3>Conteúdo</h3>
+            <ul>
+              <li>Operações Lógicas (and, not, or)</li>
+              <li>Loops com while</li>
+            </ul>
+            <h3>📝 Exercícios</h3>
+            <ul>
+              <li>perguntar duas idades, caso 1 pessoa > 18: deixa entrar</li>
+              <li>Perguntar numero de 1 - 10 até ser válido</li>
+              <li>Perguntar duas idades, ver quantos 18+, responde quantos entram</li>
+            </ul>
+          </div>
+        </div>
+      
+      <h2 class="aula-titulo">Aula 5</h2>
+
+        <div class="aula-bloco">
+          <video class="aula-video" controls>
+            <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+          </video>
+          <div class="aula-info">
+            <h3>Conteúdo</h3>
+            <ul>
+              <li>loops com for</li>
+            </ul>
+            <h3>📝 Exercícios</h3>
+            <ul>
+              <li>pergunta quantas flexões você faz, conta e a cada número diz "você consegue"</li>
+              <li>contador de X a Y (usuário escolhe X e Y)</li>
+              <li>Perguntar ano que a pessoa nasceu e se já fez aniversário, depois mostra contador até idade</li>
+            </ul>
+          </div>
+        </div>
+
+    <!---Aba Java-->
+    <h1 class="titulo" id="AbaJava"> JavaScript</h1>
+    
+    <h2 class="aula-titulo">Aula introdutória</h2>
+
+<div class="aula-bloco">
+  <video class="aula-video" controls>
+    <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+  </video>
+  <div class="aula-info">
+    <h3>Conteúdo</h3>
+    <ul>
+      <li>O que é Python</li>
+      <li>Onde usar Python</li>
+      <li>Instalação e primeiro código</li>
+    </ul>
+    <h3>📝 Exercícios</h3>
+    <ul>
+      <li>Hello World</li>
+      <li>Primeiras variáveis</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="aula-titulo">Aula introdutória</h2>
+
+<div class="aula-bloco">
+  <video class="aula-video" controls>
+    <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+  </video>
+  <div class="aula-info">
+    <h3>Conteúdo</h3>
+    <ul>
+      <li>O que é Python</li>
+      <li>Onde usar Python</li>
+      <li>Instalação e primeiro código</li>
+    </ul>
+    <h3>📝 Exercícios</h3>
+    <ul>
+      <li>Hello World</li>
+      <li>Primeiras variáveis</li>
+    </ul>
+  </div>
+</div>
+
+    <!---Aba HTML + CSS-->
+    <h1 class="titulo" id="AbaHTMLCSS"> HTML + CSS</h1>
+    
+    <h2 class="aula-titulo">Aula introdutória</h2>
+
+<div class="aula-bloco">
+  <video class="aula-video" controls>
+    <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+  </video>
+  <div class="aula-info">
+    <h3>Conteúdo</h3>
+    <ul>
+      <li>O que é Python</li>
+      <li>Onde usar Python</li>
+      <li>Instalação e primeiro código</li>
+    </ul>
+    <h3>📝 Exercícios</h3>
+    <ul>
+      <li>Hello World</li>
+      <li>Primeiras variáveis</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="aula-titulo">Aula introdutória</h2>
+
+<div class="aula-bloco">
+  <video class="aula-video" controls>
+    <source src="/imagens-codex/videoteste.mp4" type="video/mp4">
+  </video>
+  <div class="aula-info">
+    <h3>Conteúdo</h3>
+    <ul>
+      <li>O que é Python</li>
+      <li>Onde usar Python</li>
+      <li>Instalação e primeiro código</li>
+    </ul>
+    <h3>📝 Exercícios</h3>
+    <ul>
+      <li>Hello World</li>
+      <li>Primeiras variáveis</li>
+    </ul>
+  </div>
+</div>
+  </main>
+</div>
