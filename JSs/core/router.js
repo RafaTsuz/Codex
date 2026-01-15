@@ -43,7 +43,7 @@ function carregarPagina(nome) {
       iniciarMenuMobile()
 
       
-      if (nome === "chatsteste") {
+      if (nome === "chats") {
         iniciarChat();
         iniciarSidebarChats();
       }
@@ -52,11 +52,11 @@ function carregarPagina(nome) {
 
 
 function atualizarPagina() {
-  const hash = location.hash.slice(1) || "paginainicialteste";
+  const hash = location.hash.slice(1) || "paginainicial";
 
   carregarPagina(hash).then(() => {
     inicializadores.forEach(fn => fn());
-    if (hash === "sobreteste") initCarousel();
+    if (hash === "sobre") initCarousel();
   });
 }
 
@@ -69,7 +69,7 @@ document.addEventListener("click", e => {
 });
 
 function navegarPara(pagina, secao = null, delay = 400) {
-  const destino = pagina + "teste";
+  const destino = pagina;
 
   if (location.hash.replace("#", "") !== destino) {
     location.hash = destino;
