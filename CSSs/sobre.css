@@ -83,7 +83,7 @@
     transform: translateX(60%) scale(0.8);
 }
 
-@media (min-width: 769px) {
+@media (max-width: 769px) {
   .carousel-card.left,
   .carousel-card.right {
     opacity: 0.5;
