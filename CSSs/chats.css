@@ -79,6 +79,10 @@
   font-size: 13px;
 }
 
+#email{
+  font-size: 10px;
+}
+
 #conteudo {
   width: calc(100% - 25px);
 }

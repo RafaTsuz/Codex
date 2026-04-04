@@ -74,6 +74,10 @@
   font-size: 13px;
 }
 
+#email{
+  font-size: 10px;
+}
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%; 
@@ -99,8 +103,8 @@
 .aula-bloco {
   display: flex;
   gap: 30px;
-  margin-bottom: 70px;
-  align-items: flex-start;
+  margin-bottom: 50px;
+  align-items: flex-start;  
 }
 
 .aula-video {
@@ -141,6 +145,11 @@
 
 #menu-btn{
   display: none;
+}
+
+.fonte{
+  color: white;
+  font: size 10px;
 }
 
 /*Aplicação Mobile*/
