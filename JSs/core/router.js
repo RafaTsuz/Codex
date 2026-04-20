@@ -4,6 +4,7 @@ import { iniciarFAQ } from "../layout/faq.js";
 import { iniciarChat } from "../paginas/chat.js";
 import { trocarChat } from "../paginas/chat.js";
 import { initCarousel } from "../paginas/sobre.js";
+import { iniciarBotonsAulas } from "../paginas/aulas.js";
 
 
 const PASTA_PAGINAS = "HTMLs";
@@ -57,6 +58,7 @@ function atualizarPagina() {
   carregarPagina(hash).then(() => {
     inicializadores.forEach(fn => fn());
     if (hash === "sobre") initCarousel();
+    if (hash === "aulas")  iniciarBotonsAulas();
   });
 }
 

@@ -143,6 +143,30 @@
   color: white;
 }
 
+.btns-aulas{
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-vai-volta{
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    background-color: #9408fc;
+    color: white;
+    border: solid white;
+    border-radius: 25px;
+    font-family: 'Michroma';
+    font-size: 12px;
+    padding: 5px;
+    text-decoration: none;
+    margin: 15px;
+        }
+
 #menu-btn{
   display: none;
 }
