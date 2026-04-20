@@ -1,7 +1,7 @@
         
         /*Carrossel*/
 
-        .carousel-container {
+  .carousel-container {
     width: 100%;
     max-width: 1000px;
     margin: 80px auto;
@@ -67,6 +67,7 @@
     left: 50%;
     top: 20px;
     transform: translateX(-160%) scale(0.8);
+    opacity: 0.3;
 }
 
 .carousel-card.center {
@@ -81,13 +82,7 @@
     left: 50%;
     top: 20px;
     transform: translateX(60%) scale(0.8);
-}
-
-@media (max-width: 769px) {
-  .carousel-card.left,
-  .carousel-card.right {
-    opacity: 0.5;
-  }
+    opacity: 0.3;
 }
 
 
@@ -241,6 +236,7 @@
   .carousel-card.right {
     left: auto;
     top: auto;
+    opacity: 1;
   }
 
   .carousel-btn {
